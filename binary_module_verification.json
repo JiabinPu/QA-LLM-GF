@@ -1,0 +1,148 @@
+{
+  "version": "1.0.2",
+  "recorded_on": "2026-11-15",
+  "distribution": "binary-only api and _kernels; public loader and interfaces",
+  "supported_python": "CPython 3.12",
+  "supported_platforms": [
+    "macOS arm64",
+    "Linux x86_64",
+    "Windows x86_64"
+  ],
+  "local_environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "python": "3.12.14",
+    "torch": "2.13.0"
+  },
+  "local_unit_tests": {
+    "total": 64,
+    "passed": 64,
+    "skipped": 0,
+    "devices": [
+      "cpu",
+      "mps"
+    ]
+  },
+  "component_comparison": {
+    "cpu": {
+      "ok": true,
+      "case_count": 14,
+      "tensors_compared": 119,
+      "mismatches": []
+    },
+    "mps": {
+      "ok": true,
+      "case_count": 14,
+      "tensors_compared": 119,
+      "mismatches": []
+    }
+  },
+  "frozen_model_comparison": {
+    "case_count": 4,
+    "cases": [
+      [
+        2013,
+        0,
+        0
+      ],
+      [
+        2013,
+        0,
+        40
+      ],
+      [
+        2001,
+        0,
+        0
+      ],
+      [
+        2024,
+        0,
+        0
+      ]
+    ],
+    "cpu_all_six_dn_equal": true,
+    "mps_same_environment_all_six_dn_equal": true,
+    "actual_solver_diagnostics_equal": true,
+    "positive_budget_2013": {
+      "cpu": true,
+      "cpu_production_fastpath": true,
+      "mps": true,
+      "all_six_dn_equal": true,
+      "intermediate_predictions_equal": true,
+      "actual_solver_diagnostics_equal": true,
+      "scope": "Explicitly forced full budget regression; not natural activation or a speed benchmark."
+    }
+  },
+  "run_fingerprints": {
+    "generated": false,
+    "used_to_gate_resume": false,
+    "legacy_fingerprint_fields_ignored": true,
+    "legacy_cache_bytes_preserved": true,
+    "structural_scope_checks_retained": true,
+    "patch_checksums_and_final_h5_readback_retained": true
+  },
+  "historical_mps_reference": "The old macOS reference still has the same sparse differences on the current OS; v1.0.1 and compiled v1.0.2 match directly in the current environment. References were not overwritten.",
+  "gpu_scope": "Actual Apple MPS tested locally, including native CPU fallback for SVD. CUDA is optional and not exercised here.",
+  "no_training_or_full_tile_production": true,
+  "public_release_unchanged": true,
+  "limitations": [
+    "Binary distribution does not guarantee resistance to reverse engineering.",
+    "Previously public source cannot be recalled from other peoples copies or caches."
+  ],
+  "cross_platform_ci": {
+    "compiled-solver-Linux-X64-verification": {
+      "ok": true,
+      "device": "cpu",
+      "case_count": 14,
+      "tensors_compared": 119,
+      "mismatches": [],
+      "scope": "Synthetic same-backend component and low-level training-gradient comparison; no model training or production",
+      "python": "3.12.16",
+      "torch": "2.15.0+cpu",
+      "platform": "Linux-6.8.0-1070-azure-x86_64-with-glibc2.35"
+    },
+    "compiled-solver-macOS-ARM64-verification": {
+      "ok": true,
+      "device": "cpu",
+      "case_count": 14,
+      "tensors_compared": 119,
+      "mismatches": [],
+      "scope": "Synthetic same-backend component and low-level training-gradient comparison; no model training or production",
+      "python": "3.12.10",
+      "torch": "2.15.0",
+      "platform": "macOS-15.8.2-arm64-arm-64bit"
+    },
+    "compiled-solver-Windows-X64-verification": {
+      "ok": true,
+      "device": "cpu",
+      "case_count": 14,
+      "tensors_compared": 119,
+      "mismatches": [],
+      "scope": "Synthetic same-backend component and low-level training-gradient comparison; no model training or production",
+      "python": "3.12.10",
+      "torch": "2.15.0+cpu",
+      "platform": "Windows-2022Server-10.0.20348-SP0"
+    }
+  },
+  "cross_platform_ci_run_url": "https://github.com/JiabinPu/QA-LLM-GF/actions/runs/43659290836",
+  "actual_cpu_patch_integration": {
+    "case": [
+      2013,
+      0,
+      0
+    ],
+    "tile": "h27v06",
+    "new_inference_patches": 1,
+    "final_h5_files": 46,
+    "all_six_dn_equal_to_reference": true,
+    "six_layer_assembly_readback": true,
+    "resume_reused_patches": 1,
+    "resume_new_inference_patches": 0,
+    "new_run_has_no_fingerprint_fields": true
+  },
+  "final_published_wheel_checks": {
+    "mac_wheel_downloaded_from_github": true,
+    "cpu_mps_positive_budget_window_exact": true,
+    "mps_14_case_119_tensor_comparison_exact": true
+  }
+}

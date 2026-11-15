@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+runs/
+dist/
+*.partial
+# Publish large binary assets as versioned repository data/release deposits,
+# not ordinary Git source-history blobs.
+data/
+models/
+assets/

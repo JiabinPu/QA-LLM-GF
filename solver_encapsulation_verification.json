@@ -1,0 +1,525 @@
+{
+  "release": "v1.0.1",
+  "recorded_local_date": "2026-11-15",
+  "baseline_commit": "640923ccc40237e4876034b020af7fcb186a2740",
+  "scope": "Solver encapsulation only; no retraining, full tile production, model-weight changes, or reference replacement.",
+  "kernel_sha256": "c7d8bb97d871b4eaf930d966f6c451deca8e4af9791725b8b2af83ce1f8d5a1c",
+  "unit_tests": {
+    "tests_run": 54,
+    "passed": 54,
+    "backends": [
+      "cpu",
+      "mps"
+    ],
+    "cuda_tested": false
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "torch": "2.13.0",
+    "numpy": "2.5.2",
+    "h5py": "3.16.0",
+    "transformers": "4.57.6",
+    "safetensors": "0.8.0",
+    "mps_available": true,
+    "cuda_available": false,
+    "mps_fallback": "1",
+    "mps_fast_math": "unset",
+    "mps_prefer_metal": "unset"
+  },
+  "cpu_bundled_reference": {
+    "ok": true,
+    "reference_scope": "Four fixed native 40x40 patches/windows from the bundled h27v06 teaching crop; fresh outputs of the pre-existing frozen Mac production runtime. Not the deleted complete products and not old Windows DN.",
+    "backend": "cpu",
+    "cases": [
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": true
+      },
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 40,
+        "layers": {
+          "Lai": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": true
+      },
+      {
+        "year": 2001,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": true
+      },
+      {
+        "year": 2024,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": true
+      }
+    ],
+    "environment": {
+      "python": "3.12.14",
+      "platform": "macOS-27.2.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "torch": "2.13.0",
+      "numpy": "2.5.2",
+      "h5py": "3.16.0",
+      "transformers": "4.57.6",
+      "safetensors": "0.8.0",
+      "mps_available": false,
+      "cuda_available": false,
+      "mps_fallback": "1",
+      "mps_fast_math": "unset",
+      "mps_prefer_metal": "unset"
+    },
+    "reference_environment": {
+      "python": "3.12.14",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "torch": "2.13.0",
+      "numpy": "2.5.2",
+      "h5py": "3.16.0",
+      "transformers": "4.57.6",
+      "safetensors": "0.8.0",
+      "mps_available": false,
+      "cuda_available": false,
+      "mps_fallback": "1",
+      "mps_fast_math": "unset",
+      "mps_prefer_metal": "unset"
+    },
+    "reference_fixture_sha256": "64471ecb645a21b803228086a398a3ffee75dcacbec8632e943248188795a299"
+  },
+  "mps_same_environment_four_case_comparison": {
+    "six_layer_dn_exact": true,
+    "diagnostics_exact": true,
+    "different_values_by_array": {
+      "case_0": 0,
+      "case_1": 0,
+      "case_2": 0,
+      "case_3": 0
+    },
+    "new_joint_interface_calls": 8,
+    "cases": [
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 0
+      },
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 40
+      },
+      {
+        "year": 2001,
+        "row": 0,
+        "col": 0
+      },
+      {
+        "year": 2024,
+        "row": 0,
+        "col": 0
+      }
+    ]
+  },
+  "positive_budget_comparisons": {
+    "cpu": {
+      "six_layer_dn_exact": true,
+      "diagnostics_exact": true,
+      "different_values_by_array": {
+        "layers": 0,
+        "LAI_prediction": 0,
+        "LAI_solver_candidate": 0,
+        "LAI_st_prediction": 0,
+        "FPAR_prediction": 0,
+        "FPAR_solver_candidate": 0,
+        "FPAR_st_prediction": 0
+      },
+      "new_joint_interface_calls": 2,
+      "case": [
+        2013,
+        0,
+        0
+      ],
+      "active_variable_counts": {
+        "LAI": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        },
+        "FPAR": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        }
+      },
+      "mode": "Explicit forced-full-budget regression only; not natural learned-controller activation."
+    },
+    "cpu_production_only": {
+      "six_layer_dn_exact": true,
+      "diagnostics_exact": true,
+      "different_values_by_array": {
+        "layers": 0,
+        "LAI_prediction": 0,
+        "LAI_solver_candidate": 0,
+        "FPAR_prediction": 0,
+        "FPAR_solver_candidate": 0
+      },
+      "new_joint_interface_calls": 2,
+      "case": [
+        2013,
+        0,
+        0
+      ],
+      "active_variable_counts": {
+        "LAI": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        },
+        "FPAR": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        }
+      },
+      "mode": "Explicit forced-full-budget regression only; not natural learned-controller activation."
+    },
+    "mps": {
+      "six_layer_dn_exact": true,
+      "diagnostics_exact": true,
+      "different_values_by_array": {
+        "layers": 0,
+        "LAI_prediction": 0,
+        "LAI_solver_candidate": 0,
+        "LAI_st_prediction": 0,
+        "FPAR_prediction": 0,
+        "FPAR_solver_candidate": 0,
+        "FPAR_st_prediction": 0
+      },
+      "new_joint_interface_calls": 2,
+      "case": [
+        2013,
+        0,
+        0
+      ],
+      "active_variable_counts": {
+        "LAI": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        },
+        "FPAR": {
+          "st_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 600
+          },
+          "l1_diagnostics": {
+            "started_cores": 25,
+            "actual_iteration_sum": 125
+          }
+        }
+      },
+      "mode": "Explicit forced-full-budget regression only; not natural learned-controller activation."
+    }
+  },
+  "historical_mps_reference": {
+    "matches_current_environment": false,
+    "baseline_and_candidate_have_identical_difference_records": true,
+    "reference_environment": {
+      "python": "3.12.14",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "torch": "2.13.0",
+      "numpy": "2.5.2",
+      "h5py": "3.16.0",
+      "transformers": "4.57.6",
+      "safetensors": "0.8.0",
+      "mps_available": true,
+      "cuda_available": false,
+      "mps_fallback": "1",
+      "mps_fast_math": "unset",
+      "mps_prefer_metal": "unset"
+    },
+    "cases": [
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 5,
+            "max_dn_difference": 1
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 1,
+            "max_dn_difference": 512
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": false
+      },
+      {
+        "year": 2013,
+        "row": 0,
+        "col": 40,
+        "layers": {
+          "Lai": {
+            "different_values": 2,
+            "max_dn_difference": 1
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 5,
+            "max_dn_difference": 1
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": false
+      },
+      {
+        "year": 2001,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 2,
+            "max_dn_difference": 1
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 3,
+            "max_dn_difference": 1
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": false
+      },
+      {
+        "year": 2024,
+        "row": 0,
+        "col": 0,
+        "layers": {
+          "Lai": {
+            "different_values": 3,
+            "max_dn_difference": 1
+          },
+          "Fpar": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_Uncertainty": {
+            "different_values": 3,
+            "max_dn_difference": 1
+          },
+          "Fpar_Uncertainty": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Lai_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          },
+          "Fpar_QA": {
+            "different_values": 0,
+            "max_dn_difference": 0
+          }
+        },
+        "actual_solver_diagnostics_equal": true,
+        "all_six_layers_exact": false
+      }
+    ],
+    "interpretation": "Both v1.0.0 and v1.0.1 show the same historical-reference differences in the current environment. Their direct same-environment comparison is exact. The stored reference and its checksums remain unchanged; this does not isolate a unique environmental cause."
+  },
+  "preserved_pipeline_components": [
+    "QA and multi-sensor fusion",
+    "GPT-2 routing and budgets",
+    "all-zero-window bypass",
+    "training and gradient-enabled solver path",
+    "normalization and phenology residual encoding",
+    "decoding and physical clipping",
+    "target-year writeback and observation projection",
+    "LAI peak protection",
+    "six-layer H5 encoding"
+  ]
+}

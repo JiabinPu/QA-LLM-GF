@@ -1,0 +1,201 @@
+{
+  "schema": "qa-llm-gf-portable-gpu-environment-v1",
+  "recorded_on": "2026-10-16",
+  "platform": "macOS",
+  "machine": "arm64",
+  "python": "3.12.14",
+  "torch": "2.13.0",
+  "transformers": "4.57.6",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "h5py": "3.16.0",
+  "safetensors": "0.8.0",
+  "numerical_dtype": "float32",
+  "threads_per_owner": 1,
+  "production_device_options": [
+    "cpu",
+    "mps",
+    "cuda",
+    "auto",
+    "cpu_gpu"
+  ],
+  "reference_origin": "four_fixed_native_h27v06_cases_from_bundled_production_region_through_frozen_local_Mac_runtime",
+  "reference_is_historical_Windows_product": false,
+  "validation": {
+    "status": "passed_measured_small_scope",
+    "cpu_small_sample": {
+      "status": "passed",
+      "case_count": 4,
+      "all_six_uint16_layers_exact": true,
+      "different_values": 0,
+      "maximum_dn_difference": 0,
+      "actual_solver_diagnostics_exact": true,
+      "fixture": "data/mac_reference/reference_cpu.npz"
+    },
+    "mps_small_sample": {
+      "status": "passed",
+      "case_count": 4,
+      "all_six_uint16_layers_exact": true,
+      "different_values": 0,
+      "maximum_dn_difference": 0,
+      "actual_solver_diagnostics_exact": true,
+      "fixture": "data/mac_reference/reference_mps.npz"
+    },
+    "end_to_end_reference_cases_have_positive_solver_budget": false,
+    "concurrent_cpu_gpu_small_sample": {
+      "status": "passed",
+      "cpu_workers": 5,
+      "mps_workers": 5,
+      "native_patch_count": 10,
+      "cpu_executed_patches": 5,
+      "mps_executed_patches": 5,
+      "assembled_h5_file_count": 46,
+      "six_layer_patch_by_patch_readback_exact": true,
+      "full_crop_or_tile": false,
+      "speed_benchmark": false,
+      "replay": {
+        "status": "passed",
+        "all_backend_assignments_equal": true,
+        "six_layer_patch_checksum_count": 10,
+        "all_six_layer_patch_checksums_equal": true,
+        "solver_csv_count": 3,
+        "all_solver_csv_numeric_fields_equal": true,
+        "run_fingerprint_metadata_excluded_from_csv_comparison": true
+      },
+      "resume": {
+        "status": "passed",
+        "cached_patches_reused": 10,
+        "new_inference_count": 0,
+        "sealed_annual_h5_files_verified": 46
+      }
+    },
+    "auto_without_gpu_end_to_end": {
+      "status": "passed",
+      "native_patch_count": 1,
+      "assembled_h5_file_count": 46,
+      "six_layer_assembly_verified": true
+    },
+    "cpu_unit_tests": {
+      "status": "passed",
+      "test_count": 36,
+      "scope": "owner_selection_layout_preservation_and_solver_statistics"
+    },
+    "positive_solver_component_tests": {
+      "status": "passed",
+      "cpu_test_count": 2,
+      "mps_test_count": 2,
+      "st_budget": 3,
+      "l1_budget": 2,
+      "mps_st_iterations": 3,
+      "mps_qr_calls": 6,
+      "mps_svd_calls": 9,
+      "mps_svd_cpu_fallback_warning_observed": true,
+      "mps_l1_iterations": 2,
+      "mps_cholesky_calls": 1,
+      "mps_solve_calls": 2,
+      "full_window_positive_route_acceptance": false
+    },
+    "cuda": "not_tested",
+    "full_tile_production_performed_for_this_candidate": false,
+    "retraining_performed_for_this_candidate": false,
+    "comparison_with_existing_full_Mac_product_h5_performed": false,
+    "full_Mac_product_h5_available_in_working_copy": false,
+    "original_full_Mac_product_h5_deleted": true,
+    "all_unit_tests": {
+      "status": "passed",
+      "test_count": 40,
+      "cpu_owner_layout_statistics_test_count": 36,
+      "cpu_mps_positive_solver_component_test_count": 4
+    },
+    "external_native_tile_comparison": {
+      "status": "passed",
+      "tile": "h23v04",
+      "year": 2013,
+      "row": 0,
+      "col": 0,
+      "backends": [
+        "cpu",
+        "mps"
+      ],
+      "preprocessing_values_exact": true,
+      "preprocessing_strides_exact": true,
+      "all_six_uint16_layers_exact": true,
+      "actual_solver_diagnostics_exact": true,
+      "positive_solver_budget": false,
+      "external_input_bundled": false
+    },
+    "small_cpu_resource_budget_tests": {
+      "status": "passed",
+      "test_count": 4,
+      "logical_cpu_cases": [
+        1,
+        4,
+        15
+      ],
+      "this_Mac_5plus5_unchanged": true
+    }
+  },
+  "note": "Recorded Mac versions and measured small-scope checks; not a whole-tile accuracy or speed benchmark, not a regression against deleted annual products, and not CUDA validation. No guarantee every recorded version is available from every package index. Apple MPS uses CPU fallback for unsupported operations. The full-window references have zero solver budgets; positive budgets are covered separately at native-core component level.",
+  "production_default_configuration": {
+    "device": "auto",
+    "cpu_workers": 5,
+    "gpu_workers": 5,
+    "threads_per_owner": 1
+  },
+  "production_device_policy": {
+    "auto_with_supported_gpu": "concurrent_cpu_gpu",
+    "auto_without_supported_gpu": "cpu_only",
+    "cpu_gpu_without_supported_gpu": "cpu_only_with_profile_fallback_record",
+    "cpu": "forced_cpu_only",
+    "explicit_mps_or_cuda_unavailable": "error",
+    "zero_owner_count": "disables_corresponding_lane",
+    "both_owner_counts_zero": "error",
+    "no_gpu_and_requested_cpu_zero": "auto_or_cpu_gpu_starts_one_fallback_cpu_worker_and_records_reason",
+    "cpu_mode_requested_cpu_zero": "argument_error",
+    "explicit_mps_or_cuda_requested_gpu_zero": "argument_error",
+    "small_CPU_budget": "reduce effective owner count, preserving CPU and GPU lanes when budget allows; minimum one owner"
+  },
+  "platform_detail": "macOS-26.5.1-arm64-arm-64bit",
+  "verified_on": "2026-10-16",
+  "reference_data_directory": "data/production_region",
+  "reference_fixture_directory": "data/mac_reference",
+  "reference_cases": [
+    {
+      "year": 2013,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "year": 2013,
+      "row": 0,
+      "col": 40
+    },
+    {
+      "year": 2001,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "year": 2024,
+      "row": 0,
+      "col": 0
+    }
+  ],
+  "output_conventions": {
+    "paired_region_default_smoke": "runs/production_smoke_<device>",
+    "paired_region_default_full": "runs/production_200x200_<device>",
+    "native_tile_default_full": "runs/production_<tile>_<device>",
+    "native_tile_default_smoke": "runs/production_<tile>_smoke_<device>",
+    "paired_final_products": "<output>/Products/<year>",
+    "legacy_single_variable_parts": "<output>/Parts/<variable>",
+    "legacy_single_variable_final_products": "<output>/<year>",
+    "solver_statistics_directory": "<output>/Products",
+    "solver_csv_files": [
+      "solver_by_year_variable.csv",
+      "solver_total_by_variable.csv",
+      "solver_budget_distribution.csv"
+    ],
+    "solver_notes_file": "solver_statistics_notes.txt",
+    "solver_runtime_csv_included": false
+  }
+}
